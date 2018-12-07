@@ -1,9 +1,10 @@
 ## Usage
-Install packages:
+1. Install packages:
 ```bash
 npm i
 ```
-Start Server:
+2. Change config information in config.js
+3. Start Server:
 ```bash
 node app.js
 ```
