@@ -11,7 +11,7 @@ module.exports = {
     'POST /login': async (ctx, next) => {
         let username = ctx.request.body.username;
         let password = ctx.request.body.password;
-        ctx.rest(await userModel.login(username, password));
+        ctx.rest(await userModel.login(username, password), username);
     },
     'POST /logout': async (ctx, next) => {
         let username = ctx.request.body.username;
