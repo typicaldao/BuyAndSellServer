@@ -17,6 +17,10 @@ module.exports = {
         let username = ctx.request.body.username;
         ctx.rest(await userModel.logout(username));
     },
+    'POST /islogged': async (ctx, next) => {
+        let username = ctx.request.body.username;
+        ctx.rest(await userModel.isLoggedRest(username));
+    },
     'GET /msg_list': async (ctx, next) => {
         let username = ctx.request.query.username;
         console.log("test" + username);

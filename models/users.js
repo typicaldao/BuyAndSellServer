@@ -43,6 +43,13 @@ async function isLogged(username){
         return false;
     }
     if (new Date() - user.dataValues.last_login_time > expire_time){
+        await UserTable.update({
+            is_login: false
+        }, {
+            where:{
+                username: username
+            }
+        });
         return false;
     }
     return true;
@@ -50,6 +57,14 @@ async function isLogged(username){
 
 module.exports = {
     isLogged,
+    isLoggedRest: async (username) => {
+        let islogged = await isLogged(username);
+        if(islogged === true){
+            return responses.successResponse;
+        }else{
+            return responses.notLogged;
+        }
+    },
     register: async (username, password) => {
         let user = await UserTable.find({
             where:{

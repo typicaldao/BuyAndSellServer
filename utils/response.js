@@ -6,5 +6,5 @@ const responses = {
     invalidScore: {err: 3, info: "Invalid Score"},
     notLogged: {err: 4, info: "You are not logged"},
 };
-const expire_time = 600000;
+const expire_time = 3600000;
 module.exports = {responses: responses, expire_time:expire_time};
