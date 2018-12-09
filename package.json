@@ -15,6 +15,7 @@
         "mz": "2.4.0",
         "sequelize": "3.24.1",
         "mysql": "2.11.1",
-        "sequelize-to-json": "^0.10.3"
+        "sequelize-to-json": "^0.10.3",
+        "koa-cors": "^0.0.16"
     }
 }
